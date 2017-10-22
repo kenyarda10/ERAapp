@@ -57,7 +57,7 @@
                     }
                     else
                     {
-                        ModelState.AddFormError("An error occurred when attempting to change the password. Please contact the site owner.");
+                        ModelState.AddFormError("An error occurred when attempting to change the password. Please try again.");
                     }
 
                 }
@@ -129,7 +129,7 @@
 
     <fieldset>
         <legend>Change Password Form</legend>
-        <ol>
+        <ul>
                 <li class="current-password">
                     <label for="currentPassword" @if (!ModelState.IsValidField("currentPassword")) {<text>class="error-label"</text>}>Current password</label>
                     <input type="password" id="currentPassword" name="currentPassword" @Validation.For("currentPassword")/>
@@ -145,7 +145,7 @@
                 <input type="password" id="confirmPassword" name="confirmPassword" @Validation.For("confirmPassword")/>
                 @Html.ValidationMessage("confirmPassword")
             </li>
-        </ol>
+        </ul>
 
         <button type="submit" name="action" value="password">Change Password</button>
         <p>

@@ -59,23 +59,20 @@
 
   } 
 
-        <hgroup class="title">
-            <h1>@Page.Title.</h1>
-        </hgroup>
+       
 
         <section id="loginForm">
-            <h2>Use a local account to log in.</h2>
+            <h2>Log In</h2>
             <form method="post">
                 @AntiForgery.GetHtml()
                 @* If one or more validation errors exist, show an error *@
                 @Html.ValidationSummary("Log in was unsuccessful. Please correct the errors and try again.", excludeFieldErrors: true, htmlAttributes: null)
 
-                <fieldset>
-                    <legend>Log in to Your Account</legend>
-                    <ol>
+                
+                    <ul>
                         <li class="userName">
                             <label for="userName" @if (!ModelState.IsValidField("userName"))
-                                   {<text>class="error-label"</text>}>User name</label>
+                                   {<text>class="error-label"</text>}>Username</label>
                             <input type="text" id="userName" name="userName" value="@userName" @Validation.For("userName") />
                             @* Write any user name validation errors to the page *@
                             @Html.ValidationMessage("userName")
@@ -86,9 +83,9 @@
                             @* Write any password validation errors to the page *@
                             @Html.ValidationMessage("password")
                         </li>
-                    </ol>
+                    </ul>
                     <input type="submit" value="Log in" />
-                </fieldset>
+               
             </form>
             <p>
                 <a href="~/Account/Register">Don't have an Account?</a>

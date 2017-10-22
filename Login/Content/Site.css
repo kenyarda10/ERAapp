@@ -394,7 +394,7 @@ aside {
     margin: 5px 0 0 10px;
 }
 
-/* forms */
+ forms 
 fieldset {
     border: none;
     margin: 0;
@@ -402,20 +402,23 @@ fieldset {
 }
 
     fieldset legend {
-        display: none;
+       font: bold; 
     }
-
-    fieldset ol {
+    
+    fieldset  {
         padding: 0;
         list-style: none;
+        padding-bottom: 5px;
     }
-
-        fieldset ol li {
-            padding-bottom: 5px;
-        }
+    
+    fieldset ol {
+        border: none;
+        margin: 0;
+        padding: 0;
+    } 
 
 label {
-    display: block;
+    
     font-size: 1.2em;
     font-weight: 600;
 }
@@ -424,14 +427,24 @@ label.checkbox {
     display: inline;
 }
 
-input, textarea {
+input, textarea, select {
     border: 1px solid #e2e2e2;
     background: #fff;
     color: #333;
     font-size: 1.2em;
     margin: 5px 0 6px 0;
     padding: 5px;
+    width: 150px;
+}
+
+#address {
     width: 300px;
+}
+
+
+select {
+    
+    height: 30px;
 }
 
 textarea {
@@ -439,7 +452,7 @@ textarea {
     width: 500px;
 }
 
-    input:focus, textarea:focus {
+    input:focus, textarea:focus, select:focus {
         border: 1px solid #7ac0da;
     }
 
@@ -451,6 +464,7 @@ textarea {
 
     input[type="submit"],
     input[type="button"],
+    input[type="reset"],
     button {
         background-color: #d3dce0;
         border: 1px solid #787878;
@@ -464,6 +478,7 @@ textarea {
 
     td input[type="submit"],
     td input[type="button"],
+    td input[type="reset"],
     td button {
         font-size: 1em;
         padding: 4px;
